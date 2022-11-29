@@ -97,7 +97,7 @@ class QuoteChecker(object):
         try:
             # Flake8 3.x registration
             parser.add_option(*args, **kwargs)
-        except (optparse.OptionError, TypeError):
+        except (optparse.OptionError, TypeError, ValueError):
             # Flake8 2.x registration
             parse_from_config = kwargs.pop('parse_from_config', False)
             option = parser.add_option(*args, **kwargs)
